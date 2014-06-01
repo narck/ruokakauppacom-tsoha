@@ -25,6 +25,14 @@ angular.module('ruokakauppacomTsohaApp', [
         controller: 'SettingsCtrl',
         authenticate: true
       })
+      .when('/products/:id', {
+        templateUrl: 'partials/product',
+        controller: 'ProductsCtrl'
+      })
+      .when('/products', {
+        templateUrl: 'partials/products',
+        controller: 'ProductsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -1,0 +1,25 @@
+
+{{product.category}} > {{product.subcategory}}
+
+<div class="product-title" style="background: #404040; color:white;"> <h3>{{product.name}}</h3></div>
+<a href="http://verkkokauppa.com/fi/product/{{product.sku}}" >Linkki</a><br/>
+<div class="col-md-6">
+	<img src="{{product.imageUrl}}" alt="Delicious!"/>
+</div>
+<div class="col-md-4" style="text-align: left; background: #F0F0F0;border-radius:5px;">
+
+
+	<span class="font-size:14px">Tuotenumero: {{ product.sku }}<br><br> </span>
+	
+	
+	<strong>Hinta:</strong>
+	<h4 style="color:red;">{{product.price}}€</h4>
+	<strong>Arvostelu:</strong>
+	<h4 style="">{{product.score}}</h4>
+	<strong>Saatavuus:</strong>
+	<h4 style="">{{product.availability}}, {{product.stock}} varastossa</h4>
+
+	
+
+
+</div>

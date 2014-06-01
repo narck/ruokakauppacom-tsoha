@@ -5,7 +5,7 @@ angular.module('ruokakauppacomTsohaApp')
     
     // Get currentUser from cookie
     $rootScope.currentUser = $cookieStore.get('user') || null;
-    //$cookieStore.remove('user');
+    $cookieStore.remove('user');
 
     return {
 
@@ -23,8 +23,8 @@ angular.module('ruokakauppacomTsohaApp')
           username: user.username,
           password: user.password
         }, function(user) {
-          console.log(user)
           $rootScope.currentUser = user;
+          console.log($rootScope.currentUser)
           return cb();
         }, function(err) {
           return cb(err);
@@ -96,6 +96,7 @@ angular.module('ruokakauppacomTsohaApp')
        * @return {Object} user
        */
       currentUser: function() {
+        console.log('currentuser called')
         return User.get();
       },
 
@@ -105,8 +106,11 @@ angular.module('ruokakauppacomTsohaApp')
        * @return {Boolean}
        */
       isLoggedIn: function() {
+        // Actually verify session from API
+        // return !User.get().username;
         var user = $rootScope.currentUser;
         return !!user;
+
       },
     };
   });

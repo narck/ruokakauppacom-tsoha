@@ -8,6 +8,9 @@ angular.module('ruokakauppacomTsohaApp')
     }, {
       'title': 'Settings',
       'link': '/settings'
+    }, {
+      'title': 'Products',
+      'link': '/products'
     }];
 
     $scope.logout = function() {

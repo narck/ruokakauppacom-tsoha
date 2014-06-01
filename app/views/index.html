@@ -17,6 +17,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -24,11 +25,15 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-<div class="ribbon">
-  <a>Tsoha™ edition</a>
-</div>
+
+    <!-- Wew, adding navbar here so it doesn't get reloaded -->
+    <div ng-include="'partials/navbar.html'" class="navbar"></div>
+
     <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+
+     <div class="container">
+       <div ng-view="" class="content"> </div>
+     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -62,6 +67,12 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/navbar.js"></script>
+        <script src="scripts/services/Auth.js"></script>
+        <script src="scripts/services/Session.js"></script>
+        <script src="scripts/services/User.js"></script>
+        <script src="scripts/controllers/Login.js"></script>
+        <script src="scripts/controllers/Signup.js"></script>
+        <script src="scripts/controllers/Settings.js"></script>
         <!-- endbuild -->
 </body>
 </html>

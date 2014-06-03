@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ruokakauppacomTsohaApp')
-  .factory('Auth', function Auth($location, $rootScope, Session, User, $cookieStore) {
+  .factory('Auth', function Auth($location, $rootScope, Session, User, $cookieStore, $http) {
     
     // Get currentUser from cookie
     $rootScope.currentUser = $cookieStore.get('user') || null;
@@ -24,7 +24,6 @@ angular.module('ruokakauppacomTsohaApp')
           password: user.password
         }, function(user) {
           $rootScope.currentUser = user;
-          console.log($rootScope.currentUser)
           return cb();
         }, function(err) {
           return cb(err);
@@ -96,7 +95,8 @@ angular.module('ruokakauppacomTsohaApp')
        * @return {Object} user
        */
       currentUser: function() {
-        console.log('currentuser called')
+        
+        var user = $rootScope.currentUser;
         return User.get();
       },
 
@@ -110,7 +110,6 @@ angular.module('ruokakauppacomTsohaApp')
         // return !User.get().username;
         var user = $rootScope.currentUser;
         return !!user;
-
       },
     };
   });

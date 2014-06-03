@@ -5,6 +5,7 @@ Tsoha-implementaatio ruokakauppacomista Sqlite3:ella.
 
 # Riippuvaisuudet
 * Node.js
+* Sqlite3
 
 # Ohjeet
 Palvelin käyttää pääasiallisesti DBPATH, PORT, ja NODE_ENV -ympäristömuuttujia. DBPATH on pakollinen, jolla annetaan Nodelle polku tietokantaan (suositeltu sijainti kansiossa **/db**)

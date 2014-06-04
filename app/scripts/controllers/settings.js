@@ -10,6 +10,7 @@ angular.module('ruokakauppacomTsohaApp')
       if(form.$valid) {
         Auth.changePassword( $scope.user.oldPassword, $scope.user.newPassword )
         .then( function() {
+          $scope.errors.other = ''; // flush error flash
           $scope.message = 'Password successfully changed.';
         })
         .catch( function() {

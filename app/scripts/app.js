@@ -33,6 +33,10 @@ angular.module('ruokakauppacomTsohaApp', [
         templateUrl: 'partials/products',
         controller: 'ProductsCtrl'
       })
+      .when('/favorites', {
+        templateUrl: 'partials/favorites',
+        controller: 'FavoritesCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

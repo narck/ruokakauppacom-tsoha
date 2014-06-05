@@ -35,7 +35,12 @@ angular.module('ruokakauppacomTsohaApp', [
       })
       .when('/favorites', {
         templateUrl: 'partials/favorites',
-        controller: 'FavoritesCtrl'
+        controller: 'FavoritesCtrl',
+        authenticate: true
+      })
+      .when('/meal', {
+        templateUrl: 'partials/meal',
+        controller: 'MealCtrl'
       })
       .otherwise({
         redirectTo: '/'

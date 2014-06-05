@@ -14,8 +14,15 @@ angular.module('ruokakauppacomTsohaApp')
           password: $scope.user.password
         })
         .then( function() {
-          // Account created, redirect to home
+          Auth.login({
+          username: $scope.user.username,
+          password: $scope.user.password
+        })
+        .then( function() {
+          // Logged in, redirect to home
           $location.path('/');
+        })
+          
         })
         .catch( function(err) {
           err = err.data;
@@ -23,7 +30,6 @@ angular.module('ruokakauppacomTsohaApp')
 
           // Update validity of form fields that match the mongoose errors
           angular.forEach(err.errors, function(error, field) {
-            //form[field].$setValidity('mongoose', false);
             $scope.errors[field] = error.message;
           });
         });

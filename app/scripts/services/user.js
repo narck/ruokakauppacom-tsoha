@@ -14,6 +14,10 @@ angular.module('ruokakauppacomTsohaApp')
         params: {
           id:'me'
         }
+      },
+      delete: {
+        method: 'DELETE',
+        params: {}
       }
 	  });
   });

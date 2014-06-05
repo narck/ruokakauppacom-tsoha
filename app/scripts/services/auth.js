@@ -48,6 +48,18 @@ angular.module('ruokakauppacomTsohaApp')
           }).$promise;
       },
 
+      deleteUser: function(callback) {
+        var cb = callback || angular.noop;
+
+        return User.delete(function() {
+            $rootScope.currentUser = null;
+            return cb();
+          },
+          function(err) {
+            return cb(err);
+          }).$promise;
+      },
+
       /**
        * Create a new user
        * 

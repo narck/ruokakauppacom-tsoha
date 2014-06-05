@@ -11,6 +11,9 @@ angular.module('ruokakauppacomTsohaApp')
     }, {
       'title': 'Products',
       'link': '/products'
+    }, {
+      'title': 'Suggest a delicious meal',
+      'link': '/meal'
     }];
 
     $scope.logout = function() {

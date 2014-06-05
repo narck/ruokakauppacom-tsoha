@@ -15,7 +15,8 @@
     "passport": "^0.2.0",
     "passport-local": "^1.0.0",
     "sqlite3": "2.2.x",
-    "static-favicon": "~1.0.1"
+    "static-favicon": "~1.0.1",
+    "node-cache": "1.0.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

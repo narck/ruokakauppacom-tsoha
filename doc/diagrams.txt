@@ -1,0 +1,12 @@
+
+# USECASE #
+[Registered User]-(Sign In)
+[Registered User]-(Browse Products)
+(Sign In)>(Add Products to Favorites)
+(Add Products to Favorites)>(Later index favorites)
+(Browse Products)>(Generate Meal)
+(Generate Meal)>(Buy Meal)
+[Unregistered User]-(Browse Products)
+[Unregistered User]-(Sign Up)
+(Sign Up)>(Log In)
+

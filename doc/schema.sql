@@ -2,7 +2,14 @@ CREATE TABLE categories (
   id integer NOT NULL PRIMARY KEY,
   name TEXT UNIQUE
 );
-CREATE TABLE favorites (id INTEGER NOT NULL PRIMARY KEY, user_id INTEGER, product_sku INTEGER);
+CREATE TABLE favorites (
+    id INTEGER NOT NULL PRIMARY KEY,
+    sku INTEGER,
+    user_id INTEGER,
+    FOREIGN KEY (sku) REFERENCES products,
+    FOREIGN KEY (user_id) REFERENCES users
+    UNIQUE(user_id, sku)
+);
 CREATE TABLE products (
 	sku INTEGER NOT NULL PRIMARY KEY,
 	name VARCHAR(255),
@@ -22,7 +29,7 @@ CREATE TABLE subcategories (
   FOREIGN KEY (parentid) REFERENCES categories
 );
 CREATE TABLE users (
-  id INTEGER NOT NULL PRIMARY KEY, 
-  username TEXT UNIQUE, 
-  password TEXT, 
-  salt TEXT);
+	id INTEGER NOT NULL PRIMARY KEY, 
+	username TEXT UNIQUE, 
+	password TEXT, 
+	salt TEXT);

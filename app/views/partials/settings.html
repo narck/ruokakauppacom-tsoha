@@ -6,12 +6,11 @@
   </div>
   <div class="col-sm-12">
     <form class="form" name="form" ng-submit="changePassword(form)" novalidate>
-    	
+      
       <div class="form-group">
         <label>Current Password</label>
 
-        <input type="password" name="password" class="form-control" ng-model="user.oldPassword"
-               />    
+        <input type="password" name="password" class="form-control" ng-model="user.oldPassword"/>    
         <p class="help-block" ng-show="form.password.$error">
             {{ errors.other }}
         </p>
@@ -33,8 +32,9 @@
 
       <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
     </form>
-    <form confirmed-click="deleteUser()" ng-confirm-click="Are you sure you want to delete yourself?" class="form" name="form">
-            <button class="btn btn-lg btn-danger" type="submit">Delete user</button>
-    </form>
   </div>
 </div>
+<br />
+<form confirmed-click="deleteUser()" ng-confirm-click="Are you sure you want to delete yourself?" class="form" name="form">
+            <button class="btn btn-lg btn-danger" type="submit">Delete user</button>
+    </form>

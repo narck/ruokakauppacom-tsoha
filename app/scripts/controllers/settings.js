@@ -7,10 +7,14 @@ angular.module('ruokakauppacomTsohaApp')
     $scope.changePassword = function(form) {
       $scope.submitted = true;
 
+      if ($scope.user === undefined) {
+        $scope.errors.other = 'Incorrect password';
+      }
+
       if(form.$valid) {
         Auth.changePassword( $scope.user.oldPassword, $scope.user.newPassword )
         .then( function() {
-          $scope.errors.other = ''; // flush error flash
+          $scope.errors.other = '';
           $scope.message = 'Password successfully changed.';
         })
         .catch( function() {

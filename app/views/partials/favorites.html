@@ -1,4 +1,25 @@
 <div ng-repeat="favorite in favorites">
-<div class="product-title" style="background: #404040; color:white;"> <h3>{{favorite.name}}</h3></div>
-<a href="http://verkkokauppa.com/fi/product/{{product.sku}}" >Linkki</a><br/>
+<div class="product-title" style="background: #404040; color:white;"> <h3>{{favorite.name}}</h3>
+</div>
+<div class="col-md-6">
+	<img src="{{favorite.imageUrl}}" alt="Delicious!" style="height:250px;width:230px"/>
+</div>
+<a href="http://verkkokauppa.com/fi/product/{{favorite.sku}}" >Linkki</a><br/> 
+
+	<span class="font-size:14px">Tuotenumero: {{ favorite.sku }}<br><br> </span>
+	
+	
+	<strong>Hinta:</strong>
+	<h4 style="color:red;">{{favorite.price}}€</h4>
+	<strong>Arvostelu:</strong>
+	<h4 style="">{{favorite.score}}</h4>
+	<strong>Saatavuus:</strong>
+	<h4 style="">{{favorite.availability}}, {{favorite.stock}} varastossa</h4>
+	
+	<form ng-show="true" ng-submit="defavorite(this)">
+		<button class="btn btn-danger" ng-click="" type="submit">Remove from favorites</button>
+		<input type="hidden" name="sku" value="{{favorite}}"><br>
+		<br /><br />
+	</form>
+
 </div>

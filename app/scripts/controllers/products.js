@@ -20,13 +20,7 @@ angular.module('ruokakauppacomTsohaApp')
           });
         }
 
-        $scope.defavorite = function (product) {
-          $http({
-            url: '/api/users/me/favorites',
-            method: "DELETE",
-            data: { 'sku' : sku }
-          });
-        }
+
 
       });
     }
